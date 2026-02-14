@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine's Day ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff4e8a, #ff9a9e);
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    top: 20%;
+}
+
+h1 {
+    font-size: 3rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+p {
+    font-size: 1.5rem;
+    margin: 20px;
+    animation: fadeIn 4s ease-in-out;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #ff4e8a;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffe6ee;
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Floating hearts */
+.heart {
+    position: absolute;
+    color: rgba(255,255,255,0.6);
+    animation: float 6s infinite;
+}
+
+@keyframes float {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-800px);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Happy Valentine’s Day my love ❤️</h1>
+    <p>My love, thank you for being my happiness, my peace, and my forever,its been 10 years and i still fall for you every day. 💖</p>
+    <button onclick="showMessage()">Click for a Surprise 🎁</button>
+    <h2 id="surprise"></h2>
+</div>
+
+<script>
+function showMessage() {
+    document.getElementById("surprise").innerHTML =
+        "You are my favorite person in the entire universe 🌍❤️";
+}
+
+// Generate floating hearts
+for (let i = 0; i < 20; i++) {
+    let heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = Math.random() * 100 + "vh";
+    heart.style.fontSize = Math.random() * 30 + 20 + "px";
+    heart.style.animationDuration = Math.random() * 5 + 5 + "s";
+    document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
